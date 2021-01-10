@@ -56,6 +56,7 @@ if wlan.isconnected():
         fn=str(i)+".raw"
         url=ourl+fn
         don(fn,url)
+    don("main.py",a2)
 else:
     print("wifi error")
 
