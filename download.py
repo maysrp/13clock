@@ -59,4 +59,3 @@ if wlan.isconnected():
     don("main.py",a2)
 else:
     print("wifi error")
-
