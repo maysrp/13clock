@@ -23,7 +23,6 @@ espressodolc = XglcdFont('EspressoDolce18x24.c', 18, 24)
 fixedfont = XglcdFont('FixedFont5x8.c', 5, 8)
 
 
-
 def wjson(a,b,c,d,e,f):
     df={}
     df['wifiname']=a
@@ -107,6 +106,7 @@ ap.config(essid="mc", authmode=network.AUTH_WPA_WPA2_PSK, password=set_password)
 wlan = network.WLAN(network.STA_IF) 
 wlan.active(True) 
 wlan.connect(wifiname, wifipassword) 
+
 
 #####自动陪网设置
 
@@ -231,6 +231,7 @@ def oledShow(a):
 if wlan.isconnected():
      _thread.start_new_thread(oledShow,('233',))
 else:
+    wlan.connect(wifiname, wifipassword) 
     time.sleep(3)
     if wlan.isconnected():
         _thread.start_new_thread(oledShow,('233',))
