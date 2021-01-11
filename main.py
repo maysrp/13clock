@@ -182,7 +182,6 @@ def oledShow(a):
     temp=str(wea[1])+"C"
     h,m=showTime()
     mtime=strx(h)+":"+strx(m)
-
     display.draw_text(5, 40, mtime, robotron, color565(180, 180, 180))
     display.draw_text(127-5*(len(city)+2), 40, city, fixedfont, color565(255, 255, 0))
     display.draw_text(127-13*(len(temp)), 50, temp, espressodolc, color565(255, 255, 0))
@@ -194,7 +193,7 @@ def oledShow(a):
     om=m
     swapMtime=mtime
     swapBli=bli
-    while True:
+    while 1:
         h,m=showTime()
         if m!=om:
             om=m
@@ -226,10 +225,11 @@ def oledShow(a):
             display.draw_text(0, 80, 'bilibili', espressodolc, color565(0, 0,255))
             display.draw_text(0, 110, bli, robotronm, color565(0, 255,255))
             display.draw_image(img,78,78,50,50)
-        time.sleep(1)
-
+        time.sleep(3)
+        gc.collect()
+time.sleep(2)
 if wlan.isconnected():
-     _thread.start_new_thread(oledShow,('233',))
+    _thread.start_new_thread(oledShow,('233',))
 else:
     wlan.connect(wifiname, wifipassword) 
     time.sleep(3)
