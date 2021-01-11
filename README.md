@@ -40,3 +40,7 @@ Ctrl+D
 执行 ，
 
 若不行，请重复一次上面的操作，或者查看你的wifi名称和密码是否设置正确
+
+
+视频教程：  
+https://www.bilibili.com/video/BV1uo4y1o7J6
